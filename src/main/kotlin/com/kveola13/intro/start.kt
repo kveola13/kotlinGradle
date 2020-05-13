@@ -4,6 +4,13 @@ fun start(): String {
     return "Hello world"
 }
 
-fun startWithLineSeparation(): String{
+fun startWithLineSeparation(): String {
     return "Hello,\nKotlin!"
+}
+
+fun printName(): String? {
+    val hello: String? = null
+    val name = "Ola"
+    if (hello == null) return name
+    return hello
 }

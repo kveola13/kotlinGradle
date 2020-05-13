@@ -1,3 +1,4 @@
+import com.kveola13.intro.printName
 import com.kveola13.intro.start
 import com.kveola13.intro.startWithLineSeparation
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -18,5 +19,9 @@ internal class StartKtTest {
     @Test
     fun testLineSeparation(){
         assertEquals("Hello,\nKotlin!", startWithLineSeparation())
+    }
+    @Test
+    fun testPrintName(){
+        assertEquals("Ola", printName())
     }
 }
