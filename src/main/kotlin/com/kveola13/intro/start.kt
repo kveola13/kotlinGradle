@@ -14,3 +14,5 @@ fun printName(): String? {
     if (hello == null) return name
     return hello
 }
+
+fun startReturn(): String = "OK"
