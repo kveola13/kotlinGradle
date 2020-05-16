@@ -16,13 +16,15 @@ fun maxAmountOfCoffeeFromIngredients(ingredients: List<Int>): Int {
 fun makeCoffeeFromDesiredAmountOfCups(amount: Int, ingredients: List<Int>) : String {
     var returnText = ""
     val maximumCups = maxAmountOfCoffeeFromIngredients(ingredients)
-    if(maximumCups < amount) {
+    if(maximumCups >= amount) {
         returnText += "Yes. I can make that amount of coffee"
-        if(maximumCups == amount){
+        if(maximumCups - amount > 0){
             returnText += " (and even ${maximumCups - amount} more than that)"
         }
     }
-
+    else {
+        returnText = "No. I can make only $maximumCups cups of coffee"
+    }
     return returnText
 }
 
@@ -39,11 +41,10 @@ fun canMakeCoffeeFromIngredients() {
     print("Write how many cups of coffee you will need:")
     val desiredCups = Integer.valueOf(readLine())
     print("$desiredCups \n")
-    val curList = listOf(waterInput, milkInput, beanInput, desiredCups)
+    val curList = listOf(waterInput, milkInput, beanInput)
+    println(makeCoffeeFromDesiredAmountOfCups(desiredCups, curList))
 }
 
 fun main() {
-    val curList = listOf(2200, 250, 100)
-    makeCoffeeFromDesiredAmountOfCups(1, curList)
-    println(maxAmountOfCoffeeFromIngredients(curList))
+    canMakeCoffeeFromIngredients()
 }
